@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title><%= title %></title>
+    </head>
+    <body>
+        <ul>
+            <% for(let i = 0; i < users.length; i++){ %>
+                <li>
+                    <p><%= users[i].name %> </p>
+                    <p><%= users[i].phoneNo %></p>
+                    <a href="/delete-user?id=<%= users[i].id %>">X</a>
+                </li>
+            <% } %>
+        </ul>
+        <form action="/add-user" method="post">
+            <input type="text" name="name" />
+            <input type="number" name="phoneNo" />
+            <input type="submit" value="Add" />
+        </form>
+    </body>
+</html>
